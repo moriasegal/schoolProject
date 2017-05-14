@@ -1,0 +1,60 @@
+.flex-container-school-view {
+    display: flex;
+    width: 100%;
+}
+
+.flex-item-school-view {
+    width: 100%;
+    margin: 10px;
+}
+
+.flex-container-list-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-item-list-view {
+    width: 80%;
+    margin: 10px;
+}
+.flex-admin{
+    width: 50%;
+}
+/*flex-item-school-view flex-admin*/
+.img{
+    margin: 0 10%;
+    width: 80%;
+}
+
+@font-face {
+    font-family:  'Lora', serif;
+    src: url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
+}
+
+
+.course_figcaption,.figcaption{
+    font-family: 'Lora', serif;
+    text-align: center;
+}
+
+.course_link, .link{
+    text-decoration: none;
+}
+
+.course_name{
+    font-style: oblique;
+    
+}
+
+.aside_title{
+    display: inline;
+}
+
+.add_link{
+   float: right;
+   text-decoration: none;
+   font-size: 20px;
+   color: black;
+}
+

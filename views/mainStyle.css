@@ -1,0 +1,37 @@
+
+
+.line-separator{
+    border-bottom:1px solid black;
+    margin-top: 5px;
+
+}
+
+.flex-container-main-view{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.flex-item-main-view {
+    width: 80%;
+    
+}
+
+.l_flex{
+    
+}
+
+.r_flex{
+    /*border: 1px solid black;*/
+    margin-left: 10%;
+}
+
+.main_title{
+    display: inline;
+}
+
+.edit_link{
+   float: right;
+   text-decoration: none;
+}
