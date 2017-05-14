@@ -54,18 +54,10 @@ class Course implements ISavable {
     public static function printList() {
         $courses = self::selectAll();
 
-        $html  = '';
         for ($i=0, $count = count($courses); $i < $count; $i++) { 
-            $html .="<figure class='course_figure flex-item-list-view'>
-                        <a class='course_link' href='?page=course&action=details&id={$courses[$i]->id}'>
-                            <img class = 'course_img' src='" . self::$imagePrefix . "/MU_logo.jpg'>
-                            <figcaption class ='course_figcaption' >
-                                    <span class='course_name'>{$courses[$i]->name}</span>
-                            </figcaption>
-                        </a>
-                    </figure>";
+             include 'views/html/courseListHtml.php';
         }
-        return $html;
+
     }
     
      public static function student($id){
@@ -77,23 +69,11 @@ class Course implements ISavable {
         return $students;
     }
      public static function printDetails($id){
-        $courses = self::selectRow($id);
-        $students = self::student($id);
+//        $courses = self::selectRow($id);
+//        $students = self::student($id);
         
-        $html  = '';
-        $html .="<figure class='course_figure_details'>
-                    <img class = 'course_img_details' src='" . self::$imagePrefix . "/{$courses['image']}'>
-                 </figure>
-                <ul class ='course_div_details' >
-                    <li><lable for = 'course_name'>Name: </lable><span class='course_name'>{$courses['name']}</span></li>
-                    <li><lable for = 'course_description'>Description: </lable><p class='course_description'>{$courses['description']}</p></li>
-                    <li><lable for = 'course_students'>Students: </lable><ul>";
-                    for($i=0, $count = count($students); $i<$count; $i++){
-                        $html .="<li>".$students[$i]['name']."</li>";
-                    }
-                    $html .= "</ul></li>
-                </ul>";
-        return $html;
+        include 'views/html/coursetDetailsHtml.php';
+
         
     }
     

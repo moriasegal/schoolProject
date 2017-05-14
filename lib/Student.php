@@ -57,38 +57,15 @@ class Student implements ISavable {
     public static function printList() {
         $students = self::selectAll();
 
-        $html  = '';
         for ($i=0, $count = count($students); $i < $count; $i++) { 
-            
-            $html .="<figure class='student figure flex-item-list-view'>
-                        <a class='student link' href='?page=student&action=details&id={$students[$i]->id}'>
-                            <img class = 'student img' src='" . self::$imagePrefix . "/{$students[$i]->image}'>
-                            <figcaption class ='student figcaption' >
-                                    <span class='student name'>{$students[$i]->name}</span></br>
-                                    <span class='phone'>0{$students[$i]->phone}</span>
-                            </figcaption>
-                        </a>
-                    </figure>";
+            include 'views/html/personListHtml.php';
         }
-        return $html;
     }
     
     public static function printDetails($id){
 //        $students = self::selectRow($id);
-        include 'views/html/personDetailsHtml.php';
-//        $html  = '';
-//        //for ($i=0, $count = count($students); $i < $count; $i++) { 
-//            $html .="<figure class='student'>
-//                        <img class = 'student_img' src='" . self::$imagePrefix . "/{$students['image']}'>
-//                     </figure>
-//                    <ul class ='student_ul' >
-//                        <li><lable for = 'student_name'>Name: </lable><span class='student_name'>{$students['name']}</span></li>
-//                        <li><lable for = 'student_phone'>Phone: </lable><span class='student_phone'>0{$students['phone']}</span></li>
-//                        <li><lable for = 'student_emaile'>Email: </lable><span class='student_email'>{$students['email']}</span></li>
-//                        <li><lable for = 'student_course'>Courses: </lable><ul class='student_course'><li>{$students['course']}</li></ul></li>
-//                    </ul>";
-//        //}
-//        return $html;
+        include 'views/html/studentDetailsHtml.php';
+
         
     }
 }

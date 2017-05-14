@@ -1,8 +1,5 @@
 <?php
-    
-    $student_list = Student::printList();
-    $administractor_list= Administrator::printList();
-    $course_list = Course::printList();
+
     if (!isset($_GET['view'])) {
         header("Location: ?view=school&action={$_GET['action']}&page={$_GET['page']}&id={$_GET['id']}");
 	 die();
@@ -26,34 +23,12 @@
             <?php 
                 switch ($_GET['view']) {
                 case 'school':  
-                    echo "
-                    <div class='flex-item-school-view flex-container-list-view>
-                        <span>
-                            <h3 class = 'aside_title'>Courses</h3>
-                            <a class ='button add_link' href='?view=school&page=course&action=add'>+</a>
-                        </span>
-                        <div class='line-separator'></div>
-                        $course_list
-                    </div>
-                    <div class='flex-item-school-view flex-container-list-view'>
-                        <span>    
-                            <h3 class = 'aside_title'>Students</h3>
-                            <a class ='button add_link' href='?view=school&page=student&action=add'>+</a>
-                        </span>
-                        <div class='line-separator'></div>
-                         $student_list
-                    </div>";
+                    include 'views/schoolList.php';
+
                    break;
                case 'administration':
-                   echo "
-                    <div class='flex-item-school-view flex-container-list-view flex-admin'>
-                        <span>
-                            <h3 class = 'aside_title'>Administractors</h3>
-                            <a class ='button add_link' href='?view=administration&page=administrator&action=add'>+</a>
-                        </span>
-                        <div class='line-separator'></div>
-                        $administractor_list
-                    </div>";
+//              
+                    include 'views/administratorList.php';
 
                     break;
 

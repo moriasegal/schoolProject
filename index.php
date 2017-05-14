@@ -6,9 +6,9 @@ include 'lib/Course.php';
 include 'lib/Administrator.php';
 include 'lib/DB.php';
 
-$student_list = Student::printList();
-$administractor_list= Administrator::printList();
-$course_list = Course::printList();
+//$student_list = Student::printList();
+//$administractor_list= Administrator::printList();
+//$course_list = Course::printList();
 
 session_start();
 

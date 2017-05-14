@@ -58,20 +58,11 @@ class Administrator implements ISavable {
     public static function printList() {
         $administrators = self::selectAll();
 
-        $html  = '';
+//        $html  = '';
         for ($i=0, $count = count($administrators); $i < $count; $i++) {
+            include 'views/html/personListHtml.php';
             
-            $html .="<figure class='administrator'>
-                                <a class ='administrator_link' href='?view=administration&page=administrator&action=details&id={$administrators[$i]->id}'>
-                                        <img class = 'administrator_img' src='" . self::$imagePrefix . "/{$administrators[$i]->image}'>
-                                        <figcaption class ='administrator_figcaption' >
-                                                <span class='administrator_name'>{$administrators[$i]->name}</span></br>
-                                                <span class='administrator_phone'>0{$administrators[$i]->phone}</span>
-                                        </figcaption>
-                                </a>
-                        </figure>";
         }
-        return $html;
     }
     
     public static function role($id){
@@ -83,24 +74,11 @@ class Administrator implements ISavable {
 
     public static function printDetails($id){
 //        $administrators = self::selectRow($id);
-//       // $role = DB::getConnection()->query("SELECT roles.name FROM roles JOIN " . self::$tableName . " ON roles.id = " . self::$tableName .".role WHERE id = $id");
-//        $role = self::role($id);
-//        $html  = '';
-//        //for ($i=0, $count = count($administrators); $i < $count; $i++) { 
-//            $html .="<figure class='administrator figure flex-item-list-view'>
-//                        <img class = 'administrator img' src='" . self::$imagePrefix . "/{$administrators['image']}'>
-//                    </figure>
-//                    <span class ='administrator_div' >
-//                        <lable for = 'administrato nam'>Name: </lable><span class='administrator_name'>{$administrators['name']}</span>
-//                        <lable for = 'administrator phone'>Phone: </lable><span class='administrator_phone'>0{$administrators['phone']}</span>
-//                        <lable for = 'administrator emaile'>Email: </lable><span class='administrator_email'>{$administrators['email']}</span>
-//                        <lable for = 'administrator emaile'>Role: </lable><span class='administrator_role'>{$role}</span>
-//
-//                    </span>";
-//        //}
-//        return $html;
+//       //$role = DB::getConnection()->query("SELECT roles.name FROM roles JOIN " . self::$tableName . " ON roles.id = " . self::$tableName .".role WHERE id = $id");
+        $role = self::role($id);
+//        
         
-         include 'views/html/personDetailsHtml.php';
+         include 'views/html/adminDetailsHtml.php';
         
     }
 }
