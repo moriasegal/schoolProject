@@ -1,0 +1,102 @@
+
+
+/*.line-separator{
+    border-bottom:1px solid black;
+    margin-top: 5px;
+
+}*/
+
+.flex-container-main-view{
+    display: flex;
+    width: 95%;
+    justify-content:flex-start;
+    
+    
+    /*margin: 0 auto;*/
+}
+
+.flex-item-main-view {
+    width: 80%;
+    
+    
+}
+
+
+
+.r_flex{
+    /*margin-left: auto;*/
+    width: 60%;
+    margin: 3% auto;
+   
+    
+}
+
+.main_container_deta{
+/*    background-image: url('img/courses_img/MU_logo.jpg');
+    
+    background-repeat: no-repeat;
+    background-position: right top;*/
+    padding: 10px 10px 10% 10px;
+    margin-top: 1%;
+    border-radius: 1%;
+    width: 70%;
+    box-shadow: 2px 2px 8px #888888;
+    background: radial-gradient( ghostwhite, white  , ghostwhite);
+    min-width: 350px;
+    
+}
+
+.main_title{
+    display: inline;
+}
+
+.edit_link{
+   float: right;
+   text-decoration: none;
+}
+
+.details_img{
+/*    padding: 2% 2% 10% 2%;
+    border-radius: 1%;
+    width: 20%;
+    box-shadow: 2px 2px 8px #888888;
+    background: radial-gradient( ghostwhite, white  , ghostwhite);*/
+box-shadow: -2px -2px 8px #888888;
+width: 100%;
+/*border: 1px ghostwhite solid;*/
+}
+
+
+
+.deta_ul{
+   font-family: 'Lora', serif;
+   list-style-type: none;
+   padding-left: 20px;
+   
+}
+
+.deta_ul lable{
+    font-weight: bold;
+}
+
+#student_name, #administrator_name, #course_name_data{
+    /*color: red;*/
+    /*padding-left:10px;*/
+    /*font-family: 'Lora', serif;*/
+    /*text-align: center;*/
+/*    padding-left: -20px;*/
+    font-size: 1.5rem;
+    font-style: oblique;
+    
+}
+
+/*.deta_ul li:first-child {
+    margin-left: 
+    padding-left: -20px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}*/
+.stdNum{
+    margin: 1rem 0; 
+}

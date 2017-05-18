@@ -1,0 +1,49 @@
+
+.from_container{
+    margin: 3px auto;
+}
+.edit_img{
+    width: 50%;
+}
+.edit_img:hover{
+    cursor: pointer;
+}
+
+.edit_table{
+    /*width:10%;*/
+    /*border-collapse: collapse;*/
+    width: 100%;
+    padding-top: 5px;
+    /*margin: 0 auto;*/
+    /*vertical-align:text-top;*/
+    /*vertical-align: top;*/
+    text-align: left;
+    color: black;
+    /*font-size: 1rem;*/
+    
+}
+
+td:first-child{
+    font-size: 1rem;
+    font-weight: bold;
+    width: 50%
+}
+
+td input{
+    width: 96%;
+    /*text-align: center;*/
+    padding: 2%;
+}
+
+#saveForm input[type=submit]{
+    display: inline;
+     float: left;
+}
+
+#deleteForm input[type=submit]{
+    display: inline;
+    float: right;
+}
+
+
+

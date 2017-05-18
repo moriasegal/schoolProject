@@ -8,7 +8,7 @@ class DB {
 		if (empty(self::$conn)) {
 			return self::$conn = new mysqli('localhost', 'root', '', 'school_db');
 		} else {
-			return static::$conn;
+			return self::$conn;
 		}
 	}
 

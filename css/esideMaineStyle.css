@@ -1,31 +1,43 @@
 .flex-container-school-view {
     display: flex;
-    width: 100%;
+    width: 80%;
+/*    margin-top: 15px;*/
 }
 
 .flex-item-school-view {
     width: 100%;
-    margin: 10px;
+    padding-right: 10%;
+}
+
+.flex-item-school-view:first-child{
+    width: 30%;
 }
 
 .flex-container-list-view {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 40%;
+    margin-top: 15px;
 }
 
 .flex-item-list-view {
-    width: 80%;
-    margin: 10px;
+    width: 100%;
+    margin: 3px auto;
 }
 .flex-admin{
-    width: 50%;
+    width: 30%;
 }
-/*flex-item-school-view flex-admin*/
+
 .img{
-    margin: 0 10%;
-    width: 80%;
+    margin: 0 auto;
+    width: 100%;
 }
+
+.course_img{
+    margin: 0 auto;
+    width: 100%;
+}
+
 
 @font-face {
     font-family:  'Lora', serif;
@@ -36,6 +48,7 @@
 .course_figcaption,.figcaption{
     font-family: 'Lora', serif;
     text-align: center;
+    font-size: 1rem;
 }
 
 .course_link, .link{
@@ -49,12 +62,13 @@
 
 .aside_title{
     display: inline;
+    
 }
 
 .add_link{
    float: right;
    text-decoration: none;
-   font-size: 20px;
+   font-size: 1.5rem;
    color: black;
 }
 

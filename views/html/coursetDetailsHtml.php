@@ -2,6 +2,8 @@
         
      $courses = self::selectRow($id);
      $students = self::student($id);
+//     echo $students[0]['name'];
+//     echo $id;
 ?>
 
 <!DOCTYPE html>
@@ -11,20 +13,25 @@
     </head>
     <body>
         <figure class='course_figure_details'>
-            <img class = 'course_img_details' src=" <?php echo self::$imagePrefix .'/'. $courses['image']?>">
+            <img class = 'details_img' src=" <?php echo self::$imagePrefix .'/'. $courses['image']?>">
         </figure>
-        <ul class ='course_div_details' >
+        <ul class ='deta_ul' >
             <li>
-                <lable for = 'course_name'>Name: </lable>
-                <span class='course_name'><?php echo $courses['name']?></span>
+                <!--<lable for = 'course_name'>Name: </lable>-->
+                <a  style="<?php if(($admin['role'] == 3)&&($_GET['page'] == 'course')){ echo 'display: none';}?>" href="?view=<?php echo $_GET['view']?>&page=<?php echo $_GET['page']?>&action=edit&id=<?php echo $_GET['id']?>">
+                    <span id='course_name_data'><?php echo $courses['name']?></span>
+                </a>
+            </li>
+            <li class="stdNum">
+                <span ><?php echo ' ('.count($students).' students)';?></span>
             </li>
             <li>
-                <lable for = 'course_description'>Description: </lable>
-                <p class='course_description'><?php echo $courses['description']?></p>
+                <lable for = 'course_description_data'>Description: </lable>
+                <p id='course_description_data'><?php echo $courses['description']?></p>
             </li>
             <li>
                 <lable for = 'course_students'>Students: </lable>
-                <ul>
+                <ul id = 'course_students'>
                 <?php for($i=0, $count = count($students); $i<$count; $i++){
                    echo "<li>".$students[$i]['name']."</li>";
                 }?>

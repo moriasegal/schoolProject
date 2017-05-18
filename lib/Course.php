@@ -3,28 +3,30 @@
 class Course implements ISavable {
     private static $tableName = 'courses';
     private static $imagePrefix = 'img/courses_img';
-    private $id;
-    private $name;
-    private $description;
-    private $image;
-    
-            function __construct($id, $name, $description , $image) {
+    public $id;
+    public $name;
+    public $description;
+    public $image;
+    private $students;
+            
+    function __construct($id, $name, $description , $image) {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
         $this->image = $image;
+        $this->students = $id?count(self::student($id)):'0';
     }
 
      public function save() {
-        $stmt = DB::getConnection()->prepare("INSERT INTO ".self::$tableName." (name, description, image) VALUES (?, ?, ?)");
-        $stmt->bind_param('sss', $this->name, $this->description, $this->image);
-
+        $stmt = DB::getConnection()->prepare("INSERT INTO ".self::$tableName." (name, description, image, students) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param('sssi', $this->name, $this->description, $this->image, $this->students);
+        
         $stmt->execute();
     }
         
     public function edit() {
-        $stmt = DB::getConnection()->prepare("UPDATE " . self::$tableName . " SET name=?, description = ?, image=? where id = ?");
-        $stmt->bind_param('sssi', $this->name, $this->description, $this->image, $this->id);
+        $stmt = DB::getConnection()->prepare("UPDATE " . self::$tableName . " SET name=?, description = ?, image=?, students = ? where id = ?");
+        $stmt->bind_param('sssii', $this->name, $this->description, $this->image, $this->students, $this->id);
 
         $stmt->execute();
     }
@@ -36,11 +38,11 @@ class Course implements ISavable {
         $stmt->execute();
     }
     
-    private static function selectAll() {
+    public static function selectAll() {
         $result = DB::getConnection()->query("SELECT * FROM " . self::$tableName . " limit 1000");
         $rows = [];
         while ($row = $result->fetch_assoc()) {
-            $rows []= new self($row['id'], $row['name'], $row['description'], $row['image']);
+            $rows []= new self($row['id'], $row['name'], $row['description'], $row['image'], $row['students']);
         }
         return $rows;
     }
@@ -68,9 +70,8 @@ class Course implements ISavable {
         }
         return $students;
     }
+    
      public static function printDetails($id){
-//        $courses = self::selectRow($id);
-//        $students = self::student($id);
         
         include 'views/html/coursetDetailsHtml.php';
 

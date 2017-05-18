@@ -6,6 +6,7 @@ if(!isset($_SESSION["user_id"])){
     die();
     }
 include 'ISavable.php';
+include 'Person.php';
 include 'Student.php';
 include 'Course.php';
 include 'Administrator.php';

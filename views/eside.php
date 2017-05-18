@@ -13,22 +13,22 @@
 <html lang="en">
     <head>
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="views/esideMaineStyle.css"/>
+        <link type="text/css" rel="stylesheet" href="css/esideMaineStyle.css"/>
         <meta charset="UTF-8">
         <title>School</title>
     </head>
     <body>
                
-        <div class="flex-container-school-view">
+        
             <?php 
                 switch ($_GET['view']) {
-                case 'school':  
-                    include 'views/schoolList.php';
-
+                case 'school':
+                    include 'views/html/schoolList.php';
+                    
                    break;
                case 'administration':
-//              
-                    include 'views/administratorList.php';
+              
+                    include 'views/html/administratorList.php';
 
                     break;
 
@@ -36,7 +36,7 @@
                     break;
                 }
             ?>
-        </div>
+        
         
         
         

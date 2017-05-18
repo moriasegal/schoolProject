@@ -9,7 +9,7 @@ $admin = Administrator::selectRow($_SESSION["user_id"]);
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link type="text/css" rel="stylesheet" href="views/headerStyle.css"/>
+        <link type="text/css" rel="stylesheet" href="css/headerStyle.css"/>
         <meta charset="UTF-8">
         <title>School</title>
     </head>
@@ -19,8 +19,8 @@ $admin = Administrator::selectRow($_SESSION["user_id"]);
                 <img class="logo" src="img/img/monsters university logo.png"/>
             </header>
             <main class="flex-item-header l_flex_header">
-                <a class = 'headerNav' href="?view=school&action={$_GET['action']}&page={$_GET['page']}&id={$_GET['id']}"">school</a>
-                <a class = 'headerNav' href="?view=administration&action={$_GET['action']}&page={$_GET['page']}&id={$_GET['id']}"">administration</a>
+                <a class = 'headerNav' href="?view=school&action={$_GET['action']}&page={$_GET['page']}&id={$_GET['id']}" >school</a>
+                <a class = 'headerNav' href="?view=administration&action={$_GET['action']}&page={$_GET['page']}&id={$_GET['id']}" style="<?php if ($admin['role']==3){echo 'visibility: hidden';} ?>">administration</a>
             </main>
             <eside class="flex-item-header r_flex_container_header">
                 <img class = "img_header r_flex_item_header" src="<?php echo 'img/administrators_img/'.$admin['image']?>"/>

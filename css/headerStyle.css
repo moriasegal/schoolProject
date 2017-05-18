@@ -1,4 +1,8 @@
+.line-separator{
+    border-bottom:1px solid black;
+    margin-top: 5px;
 
+}
 
 .flex-container-header {
     display: flex;
@@ -9,6 +13,9 @@
 .flex-item-header {
     width: 20%;
     
+}
+.flex-item-header:nth-child(2){
+    width: 30%
 }
 
 .l_flex_header{
@@ -38,7 +45,7 @@
 
 .img_header{
     /*margin-bottom: 5%;*/
-    border-radius: 100px;
+    border-radius: 50%;
     width: 20%;
 }
 

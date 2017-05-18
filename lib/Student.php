@@ -1,24 +1,24 @@
 <?php 
 
-class Student implements ISavable {
+class Student extends Person implements ISavable {
     private static $tableName = 'students';
     private static $imagePrefix = 'img/students_img';
-    private $id;
-    private $name;
-    private $phone;
-    private $email;
-    private $image;
-    private $course;
-            function __construct($id, $name, $phone, $email, $image, $course) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->phone = $phone;
-        $this->email = $email;
-        $this->image = $image;
+    public $id;
+    public $name;
+    public $phone;
+    public $email;
+    public $image;
+    public $course;
+    
+    
+    
+    function __construct($id, $name, $phone, $email, $image, $course) {
+        parent::__construct($id, $name, $phone, $email, $image);
         $this->course = $course;
+        
     }
 
-     public function save() {
+    public function save() {
         $stmt = DB::getConnection()->prepare("INSERT INTO " .self::$tableName." (name, phone, email, image, course) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param('sisss', $this->name, $this->phone, $this->email, $this->image, $this->course);
 

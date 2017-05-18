@@ -1,23 +1,20 @@
 <?php 
 
-class Administrator implements ISavable {
+class Administrator extends Person implements ISavable {
     private static $tableName = 'administrators';
     private static $imagePrefix = 'img/administrators_img';
-    private $id;
-    private $name;
-    private $phone;
-    private $email;
-    private $password;
-    private $image;
-    private $role;
+    public $id;
+    public $name;
+    public $phone;
+    public $email;
+    public $password;
+    public $image;
+    public $role;
 
     function __construct($id, $name, $phone, $email, $password, $image, $role) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->phone = $phone;
-        $this->email = $email;
+        parent::__construct($id, $name, $phone, $email, $image);
+        
         $this->password = $password;
-        $this->image = $image;
         $this->role = $role;
     }
 
