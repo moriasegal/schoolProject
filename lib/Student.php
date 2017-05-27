@@ -63,7 +63,6 @@ class Student extends Person implements ISavable {
     }
     
     public static function printDetails($id){
-//        $students = self::selectRow($id);
         include 'views/html/studentDetailsHtml.php';
 
         

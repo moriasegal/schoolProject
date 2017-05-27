@@ -2,8 +2,7 @@
         
      $courses = self::selectRow($id);
      $students = self::student($id);
-//     echo $students[0]['name'];
-//     echo $id;
+      $admin = Administrator::selectRow($_SESSION["user_id"]);
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +16,7 @@
         </figure>
         <ul class ='deta_ul' >
             <li>
-                <!--<lable for = 'course_name'>Name: </lable>-->
-                <a  style="<?php if(($admin['role'] == 3)&&($_GET['page'] == 'course')){ echo 'display: none';}?>" href="?view=<?php echo $_GET['view']?>&page=<?php echo $_GET['page']?>&action=edit&id=<?php echo $_GET['id']?>">
+                <a  <?php if(($admin['role'] == 3)&&($_GET['page'] == 'course')){ echo 'readonly';}?>href="?view=<?php echo $_GET['view']?>&page=<?php echo $_GET['page']?>&action=edit&id=<?php echo $_GET['id']?>">
                     <span id='course_name_data'><?php echo $courses['name']?></span>
                 </a>
             </li>

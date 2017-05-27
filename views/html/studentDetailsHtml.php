@@ -14,7 +14,6 @@
         </figure>
         <ul class ='deta_ul' >
             <li>
-                <!--<lable for = 'student_name'>Name: </lable>-->
                 <a  href="?view=<?php echo $_GET['view']?>&page=<?php echo $_GET['page']?>&action=edit&id=<?php echo $_GET['id']?>">
                     <span id='student_name'><?php echo $students['name']?></span>
                 </a>

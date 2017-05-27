@@ -11,10 +11,6 @@
     
     <main class = "edit_container">
     
-<!--        <input type ="submit" class = "save_submit" value="Save"></br>
-        <input type="hidden" name ="page" value ="<?php echo $_GET['page'];?>">
-        <input type="hidden" name ="action" value="<?php echo $action?>">
-        <input type="hidden" name ="id" value="<?php echo $id?>">-->
         <table class="edit_table">
             <tr>
                 <td><label for = "name">Name: </label></td>

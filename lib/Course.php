@@ -49,7 +49,6 @@ class Course implements ISavable {
     
     public static function selectRow($id){
         $result = DB::getConnection()->query("SELECT * FROM ".self::$tableName. " WHERE id = $id");
-        //$result->bind_param('i', $id);
         return $result->fetch_assoc();
     }
 

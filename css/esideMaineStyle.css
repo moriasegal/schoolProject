@@ -1,7 +1,8 @@
 .flex-container-school-view {
     display: flex;
     width: 80%;
-/*    margin-top: 15px;*/
+    flex-wrap:wrap;
+    justify-content:space-between;
 }
 
 .flex-item-school-view {

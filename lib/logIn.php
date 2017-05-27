@@ -1,5 +1,6 @@
 <?php
 include 'ISavable.php';
+include 'Person.php';
 include 'Administrator.php' ;
 include 'DB.php';
 
@@ -20,13 +21,10 @@ if(!empty($_POST['login'])) {
          header('Location: logIn.php');
             } else {
                $message = "Invalid Username or Password!";
-//                header('Location: lib/logIn.php');
             
             }
 	} 
-//        else if(!isset($_SESSION["user_id"])){
-//    header("Location: lib/logIn.php");
-//    }
+
 } 
 ?>
 
@@ -47,8 +45,8 @@ if(!empty($_POST['login'])) {
 	  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
-        <?php include '../views/headerLogIn.php';?>
-        <div class = "container">
+        <div class = "logIn_container">
+            <?php include '../views/headerLogIn.php';?>
             <div class="wrapper">
                 <form action='logIn.php' method="post" name="Login_Form" class="form-signin">       
                     <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>

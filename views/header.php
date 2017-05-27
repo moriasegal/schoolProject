@@ -1,5 +1,4 @@
 <?php
-//include 'lib/Administrator.php';
 
 $admin = Administrator::selectRow($_SESSION["user_id"]);
 
@@ -33,22 +32,6 @@ $admin = Administrator::selectRow($_SESSION["user_id"]);
                 </span>
             </eside>  
         </div>
-
-        
-<!--        <img class="logo" src="img/img/monsters university logo.png"/>
-             monstersUniversityLogo.png"/>
-        
-        <main class = 'navbar'>
-            <a class = 'headerNav' href="#">school</a>
-            <a class = 'headerNav' href="#">administration</a>
-        </main>
-        <aside class="logout_container navbar-right">
-            <img class = "img_header flex-item" src="<?php // echo 'img/administrators_img/'.$admin['image']?>"/>
-            <span class = 'headerNav details_admin'><?php // echo $admin['name'].','.' '.Administrator::role($admin['id'])?></span></br>
-            
-            <a class = 'flex-item logout' href="#">logout</a>
-       </aside>
-        -->
         <div class="line-separator"></div>
     </body>
 </html>

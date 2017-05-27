@@ -10,16 +10,10 @@
 }
 
 .edit_table{
-    /*width:10%;*/
-    /*border-collapse: collapse;*/
     width: 100%;
     padding-top: 5px;
-    /*margin: 0 auto;*/
-    /*vertical-align:text-top;*/
-    /*vertical-align: top;*/
     text-align: left;
     color: black;
-    /*font-size: 1rem;*/
     
 }
 
@@ -31,7 +25,6 @@ td:first-child{
 
 td input{
     width: 96%;
-    /*text-align: center;*/
     padding: 2%;
 }
 

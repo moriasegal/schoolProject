@@ -55,7 +55,6 @@ class Administrator extends Person implements ISavable {
     public static function printList() {
         $administrators = self::selectAll();
 
-//        $html  = '';
         for ($i=0, $count = count($administrators); $i < $count; $i++) {
             include 'views/html/personListHtml.php';
             
@@ -70,10 +69,7 @@ class Administrator extends Person implements ISavable {
     }
 
     public static function printDetails($id){
-//        $administrators = self::selectRow($id);
-//       //$role = DB::getConnection()->query("SELECT roles.name FROM roles JOIN " . self::$tableName . " ON roles.id = " . self::$tableName .".role WHERE id = $id");
         $role = self::role($id);
-//        
         
          include 'views/html/adminDetailsHtml.php';
         
