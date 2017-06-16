@@ -19,27 +19,27 @@ class Administrator extends Person implements ISavable {
     }
 
      public function save() {
-        $stmt = DB::getConnection()->prepare("INSERT INTO " .self::$tableName." (name, phone, email, password, image, role) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = DB::getInstance()->getConnection()->prepare("INSERT INTO " .self::$tableName." (name, phone, email, password, image, role) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param('sisssi', $this->name, $this->phone, $this->email, password_hash($this->password, PASSWORD_DEFAULT), $this->image, $this->role);
 
         $stmt->execute();
     }
         
     public function edit() {
-        $stmt = DB::getConnection()->prepare("UPDATE " .self::$tableName. " SET name=?, phone=?, email=?, password=?, image=?, role = ? where id = ?");
+        $stmt = DB::getInstance()->getConnection()->prepare("UPDATE " .self::$tableName. " SET name=?, phone=?, email=?, password=?, image=?, role = ? where id = ?");
         $stmt->bind_param('sisssii', $this->name, $this->phone, $this->email, password_hash($this->password, PASSWORD_DEFAULT), $this->image, $this->role, $this->id);
 
         $stmt->execute();
     }
     public function delete() { 
-        $stmt = DB::getConnection()->prepare("DELETE FROM " .self::$tableName. " where id = ?");
+        $stmt = DB::getInstance()->getConnection()->prepare("DELETE FROM " .self::$tableName. " where id = ?");
         $stmt->bind_param('i', $this->id);
 
         $stmt->execute();
     }
 
     private static function selectAll() {
-        $result = DB::getConnection()->query("SELECT * FROM " . self::$tableName . " limit 1000");
+        $result = DB::getInstance()->getConnection()->query("SELECT * FROM " . self::$tableName . " limit 1000");
         $rows = [];
         while ($row = $result->fetch_assoc()) {
             $rows []= new self($row['id'], $row['name'], $row['phone'], $row['email'], $row['password'], $row['image'], $row['role']);
@@ -48,7 +48,7 @@ class Administrator extends Person implements ISavable {
     }
     
     public static function selectRow($id){
-        $result = DB::getConnection()->query("SELECT * FROM " . self::$tableName . " WHERE id = $id");
+        $result = DB::getInstance()->getConnection()->query("SELECT * FROM " . self::$tableName . " WHERE id = $id");
         return $result->fetch_assoc();
     }
 
@@ -56,13 +56,13 @@ class Administrator extends Person implements ISavable {
         $administrators = self::selectAll();
 
         for ($i=0, $count = count($administrators); $i < $count; $i++) {
-            include 'views/html/personListHtml.php';
+            include 'personListHtml.php';
             
         }
     }
     
     public static function role($id){
-        $result = DB::getConnection()->query("SELECT roles.name FROM roles JOIN " . self::$tableName . " ON roles.id = " . self::$tableName ." .role WHERE " . self::$tableName ." .id = $id");
+        $result = DB::getInstance()->getConnection()->query("SELECT roles.name FROM roles JOIN " . self::$tableName . " ON roles.id = " . self::$tableName ." .role WHERE " . self::$tableName ." .id = $id");
         $role = $result->fetch_assoc();
         return $role['name'];
 

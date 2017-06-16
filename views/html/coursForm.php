@@ -2,13 +2,6 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-</head>
-<body>
-    
     <main class = "edit_container">
         
         <table class="edit_table">
@@ -36,6 +29,3 @@
                 
         
     </main>
-
-</body>
-</html>

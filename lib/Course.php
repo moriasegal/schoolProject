@@ -18,28 +18,28 @@ class Course implements ISavable {
     }
 
      public function save() {
-        $stmt = DB::getConnection()->prepare("INSERT INTO ".self::$tableName." (name, description, image, students) VALUES (?, ?, ?, ?)");
+        $stmt = DB::getInstance()->getConnection()->prepare("INSERT INTO ".self::$tableName." (name, description, image, students) VALUES (?, ?, ?, ?)");
         $stmt->bind_param('sssi', $this->name, $this->description, $this->image, $this->students);
         
         $stmt->execute();
     }
         
     public function edit() {
-        $stmt = DB::getConnection()->prepare("UPDATE " . self::$tableName . " SET name=?, description = ?, image=?, students = ? where id = ?");
+        $stmt = DB::getInstance()->getConnection()->prepare("UPDATE " . self::$tableName . " SET name=?, description = ?, image=?, students = ? where id = ?");
         $stmt->bind_param('sssii', $this->name, $this->description, $this->image, $this->students, $this->id);
 
         $stmt->execute();
     }
     
     public function delete() { 
-        $stmt = DB::getConnection()->prepare("DELETE FROM " . self::$tableName . " where id = ?");
+        $stmt = DB::getInstance()->getConnection()->prepare("DELETE FROM " . self::$tableName . " where id = ?");
         $stmt->bind_param('i', $this->id);
 
         $stmt->execute();
     }
     
     public static function selectAll() {
-        $result = DB::getConnection()->query("SELECT * FROM " . self::$tableName . " limit 1000");
+        $result = DB::getInstance()->getConnection()->query("SELECT * FROM " . self::$tableName . " limit 1000");
         $rows = [];
         while ($row = $result->fetch_assoc()) {
             $rows []= new self($row['id'], $row['name'], $row['description'], $row['image'], $row['students']);
@@ -48,7 +48,7 @@ class Course implements ISavable {
     }
     
     public static function selectRow($id){
-        $result = DB::getConnection()->query("SELECT * FROM ".self::$tableName. " WHERE id = $id");
+        $result = DB::getInstance()->getConnection()->query("SELECT * FROM ".self::$tableName. " WHERE id = $id");
         return $result->fetch_assoc();
     }
 
@@ -56,13 +56,13 @@ class Course implements ISavable {
         $courses = self::selectAll();
 
         for ($i=0, $count = count($courses); $i < $count; $i++) { 
-             include 'views/html/courseListHtml.php';
+             include 'courseListHtml.php';
         }
 
     }
     
      public static function student($id){
-        $result = DB::getConnection()->query("SELECT students.name FROM students JOIN " . self::$tableName . " ON students.course = " . self::$tableName ." .name WHERE " . self::$tableName ." .id = $id");
+        $result = DB::getInstance()->getConnection()->query("SELECT students.name FROM students JOIN " . self::$tableName . " ON students.course = " . self::$tableName ." .name WHERE " . self::$tableName ." .id = $id");
         $students = [];
         while ($row = $result->fetch_assoc()) {
             $students []= $row;

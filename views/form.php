@@ -1,28 +1,27 @@
 <?php
+    include '../lib/ISavable.php';
+    include '../lib/Person.php';
+    include '../lib/Student.php';
+    include '../lib/Course.php';
+    include '../lib/Administrator.php';
+    include '../lib/DB.php';
 
-
-    $class_name =$_GET['page'];
+    $class_name = 'course';
+//            $_GET['page'];
     $table_name = $class_name.'s';
-    $action = $_GET['action'];
+    $action = 'add';
+//            $_GET['action'];
     
-        
   
-    if (!isset($action)) {
-	$form = '';
-    } else {
-        include 'appendices/edit.php';
-    }
+//    if (!isset($action)) {
+//	$form = '';
+//    } else {
+//        include 'appendices/edit.php';
+//    }
     
    
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="css/formStyle.css"/>
-</head>
-<body>   
     <h3 class = 'main_title'><?php echo $action." ".$class_name?></h3>
     <div class='line-separator'></div>
     <div class = 'from_container'>
@@ -43,15 +42,15 @@
                 <?php 
                 switch ($table_name) {
                     case 'courses':
-                        include 'views/html/coursForm.php';
+                        include 'html/coursForm.php';
                         break;
 
                     case 'administrators':
-                        include 'views/html/adminForm.php';
+                        include 'html/adminForm.php';
                         break;
 
                     case 'students':
-                        include 'views/html/studentForm.php';
+                        include 'html/studentForm.php';
                         break;
 
                     default:
@@ -61,8 +60,4 @@
             </main>
         </form>
     </div>
-    
-	
-</body>
-</html>
 
