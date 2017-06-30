@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2017 at 10:53 PM
+-- Generation Time: Jun 26, 2017 at 05:33 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -44,8 +44,7 @@ INSERT INTO `students` (`id`, `name`, `phone`, `email`, `image`, `course`) VALUE
 (2, 'James P.Sullivan', 541234568, 'jamesPsullivan@gmai.com', 'james p.sullivan.jpg', 'Basics of Canister Design'),
 (3, 'Randall Boggs', 509876543, 'RandallBoggs@gmail.com', 'Randall Boggs.jpg', 'Native Monsters'),
 (4, 'Art', 501111111, 'art@gmail.com', 'Art2.jpg', 'The Origins of the Literature of Fear '),
-(6, ' Don Carlton', 501234543, 'DonCarlton@gmail.com', 'Don_Carlton.jpg', 'Advanced Door Properties'),
-(13, '235', 234, '111@gmail.com', 'profile.png', 'Semantics');
+(6, ' Don Carlton', 501234543, 'DonCarlton@gmail.com', 'Don_Carlton.jpg', 'Advanced Door Properties ');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +64,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

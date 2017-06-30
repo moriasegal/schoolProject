@@ -62,7 +62,7 @@
     font-weight: bold;
 }
 
-#student_name, #administrator_name, #course_name_data{
+#student_name, #administrator_name, .course_name_data{
     font-size: 1.5rem;
     font-style: oblique;
     

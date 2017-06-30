@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2017 at 10:53 PM
+-- Generation Time: Jun 26, 2017 at 05:33 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -39,11 +39,11 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `name`, `description`, `image`, `students`) VALUES
-(1, 'Native Monsters', 'Studies the rituals and practices of the Native Monsters throughout history to the present, emphasizing monster responses to cultural conflict and the impact of public policy. ', 'profile.png', '1'),
+(1, 'Native Monsters', 'Studies the rituals and practices of the Native Monsters throughout history to the present, emphasizing monster responses to cultural conflict and the impact of public policy. ', 'profile.png', '0'),
 (2, 'The Origins of the Literature of Fear ', 'An overview of the fear classics, focusing on the seminal rhymes of Mother Goosebumps.', 'profile.png', '1'),
 (3, 'Basics of Canister Design', 'Learn the history of canister design, identifying models by their numerous and varied shades of yellow, and tracking the wooden barrels of early Monster history to advanced technology of today.\r\n', 'scream canister.jpg', '1'),
 (4, 'Semantics', 'In-depth study of the meanings of expressions, whether phrases, exclamations, screams, or moans. ', 'profile.png', '0'),
-(5, 'Advanced Door Properties ', 'Advanced wiring and user experience practicum.', 'door.jpg', '1');
+(5, 'Advanced Door Properties', 'Advanced wiring and user experience practicum.', 'door.jpg', '1');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

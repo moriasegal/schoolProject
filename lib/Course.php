@@ -31,9 +31,9 @@ class Course implements ISavable {
         $stmt->execute();
     }
     
-    public function delete() { 
+    public static function delete($id) { 
         $stmt = DB::getInstance()->getConnection()->prepare("DELETE FROM " . self::$tableName . " where id = ?");
-        $stmt->bind_param('i', $this->id);
+        $stmt->bind_param('i', $id);
 
         $stmt->execute();
     }
@@ -72,7 +72,7 @@ class Course implements ISavable {
     
      public static function printDetails($id){
         
-        include 'views/html/coursetDetailsHtml.php';
+        include 'C:\xampp\htdocs\schoolPhpProject\views/html/coursetDetailsHtml.php';
 
         
     }

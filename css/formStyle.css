@@ -3,7 +3,7 @@
     margin: 3px auto;
 }
 .edit_img{
-    width: 50%;
+    width: 100%;
 }
 .edit_img:hover{
     cursor: pointer;
@@ -37,6 +37,27 @@ td input{
     display: inline;
     float: right;
 }
+
+.student_form_container, .course_form_container, .admin_form_container{
+    display: flex;
+    flex-direction: column;
+    clear:both;
+    
+}
+
+.student_form_container input, .admin_form_container input, .course_form_container input{
+    width: 60%;
+}
+.student_form_container select{
+    width: 61%;
+}
+
+.student_form_item, .course_form_item, .admin_form_item{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
 
 
 

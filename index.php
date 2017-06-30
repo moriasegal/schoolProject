@@ -31,15 +31,6 @@ if(!isset($_SESSION["user_id"])){
         <title>School</title>
     </head>
     <body>
-<!--        <div class="index_container">
-            <header>
-                <?php // include 'views/header.php';?>
-            </header>
-            <main>
-             <?php // include 'views/main.php';?>
-            </main>
-        </div>-->
-
         <?php include 'views/header.php';?>
         <div class="flex-container-main-view">
             <div class="containerSchool flex-item-main-view l_flex"></div>
@@ -47,8 +38,6 @@ if(!isset($_SESSION["user_id"])){
         </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script type="text/javascript" src="script/script.js"></script>
-        <script type="text/javascript" src="script/scriptschool.js"></script>
-
     </body>
 </html>
 

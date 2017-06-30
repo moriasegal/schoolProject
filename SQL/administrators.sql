@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2017 at 10:53 PM
+-- Generation Time: Jun 26, 2017 at 05:33 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -42,8 +42,8 @@ CREATE TABLE `administrators` (
 
 INSERT INTO `administrators` (`id`, `name`, `phone`, `email`, `password`, `image`, `role`) VALUES
 (1, 'Dean Hardscrabble', 521234567, 'DeanHardscrabble@gmail.com', '$2y$10$bMDXlKllUNPze3eeA9lfwe0aYv9D97jsqYCgTwHE0QvVLlsGM5As6', 'dean hardscrabble.jpg', 1),
-(2, 'professor Knight', 526666666, 'knight@gmail.com', '$2y$10$gyQS61D4fpA57bsIObmfWeIO9ZDFTjVyGWomN.gYx04MXky775FYm', 'professor knight.jpg', 2),
-(3, 'Roz', 549998887, 'roz@gmail.com', '$2y$10$yUTuJisr3uMek3TtDNhacOIcltuVSrx8DqMcgoNjacqFs/nhZ/JZG', 'roz.jpg', 3),
+(2, 'professor Knight', 526666666, 'knight@gmail.com', '$2y$10$gzbFX3/jl30yc3CYj2O2C.svL417nIalObYeems/qRK1Ngrlf8Gaq', 'professor knight.jpg', 2),
+(3, 'Roz', 549998887, 'roz@gmail.com', '$2y$10$6g7poBYPmFbX.dgG7Ud14OtpuE7GmR3XBg14cT6aacvIivBqB1SrG', 'roz.jpg', 3),
 (4, 'Rufus Oozeman', 501111111, 'rufusoozeman@gmail.com', '$2y$10$I1OOrfwNRxL3VH3FfNrzJOBfoCRhd1tCClhVk9DCoaXkZjoLDY8nG', 'Rufus_Oozeman.jpg', 2);
 
 --
@@ -64,7 +64,7 @@ ALTER TABLE `administrators`
 -- AUTO_INCREMENT for table `administrators`
 --
 ALTER TABLE `administrators`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -31,9 +31,9 @@ class Administrator extends Person implements ISavable {
 
         $stmt->execute();
     }
-    public function delete() { 
+    public static function delete($id) { 
         $stmt = DB::getInstance()->getConnection()->prepare("DELETE FROM " .self::$tableName. " where id = ?");
-        $stmt->bind_param('i', $this->id);
+        $stmt->bind_param('i', $id);
 
         $stmt->execute();
     }
@@ -62,16 +62,16 @@ class Administrator extends Person implements ISavable {
     }
     
     public static function role($id){
-        $result = DB::getInstance()->getConnection()->query("SELECT roles.name FROM roles JOIN " . self::$tableName . " ON roles.id = " . self::$tableName ." .role WHERE " . self::$tableName ." .id = $id");
+        $result = DB::getInstance()->getConnection()->query("SELECT roles.role_name FROM roles JOIN " . self::$tableName . " ON roles.role_id = " . self::$tableName ." .role WHERE " . self::$tableName ." .id = $id");
         $role = $result->fetch_assoc();
-        return $role['name'];
+        return $role['role_name'];
 
     }
 
     public static function printDetails($id){
         $role = self::role($id);
         
-         include 'views/html/adminDetailsHtml.php';
+         include 'C:\xampp\htdocs\schoolPhpProject\views/html/adminDetailsHtml.php';
         
     }
 }

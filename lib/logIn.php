@@ -1,31 +1,7 @@
 <?php
-//include 'ISavable.php';
-//include 'Person.php';
-//include 'Administrator.php' ;
-//include 'DB.php';
-//
-//
+
 session_start();
-//    if(isset($_SESSION["user_id"])){
-//    header("location: ../index.php");
-//    }
-//    
-//    $message="";
-//if(!empty($_POST['login'])) {
-//     $result = DB::getConnection()->query("SELECT * FROM administrators WHERE email = '{$_POST['user_name']}' ");
-//        $row  = mysqli_fetch_array($result);
-//	if(is_array($row)) {
-//           
-//            if(password_verify($_POST['password'],$row['password'])){
-//            $_SESSION["user_id"] = $row['id'];
-//         header('Location: logIn.php');
-//            } else {
-//               $message = "Invalid Username or Password!";
-//            
-//            }
-//	} 
-//
-//} 
+
 ?>
 
 
